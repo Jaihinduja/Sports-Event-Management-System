@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-97824898-1', 'auto');
+ga('send', 'pageview');
+</script>
+</head>
+<body>
+
+<header>
+<img src="http://vectorlogofree.com/wp-content/uploads/2013/01/canadian-olympic-team-logo-vector-400x400.png" width="100px" height="80px">
+<h1 class="liketext">SportPro</h1>
+
+</header>
+
+<div class="row">
+
+<nav>
+		<div class="menu-icon">
+			
+		</div>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="Events.php">Events</a></li>
+			<li><a href="Results_stud.php">Results</a></li>
+			<li><a href="#" style="color:red;">About us</a></li>
+		
+			
+		</ul>
+	</nav>
+<center>
+<div class="col-5">
+  <h1>About us</h1>
+Vivekanand Education Society's Institute of Technology also known as VESIT or V.E.S. Institute of Technology, established in 1984, is a premier engineering college affiliated with the University of Mumbai.
+
+If you have any query about this application please click on below bubtton to get contact information.<br><br>
+<b><i>Thank you </b></i>
+<br><br>
+<button type="button" onclick="loadDoc()">Get Contact Details</button>
+<br><br>
+<table id="demo"></table>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "dev.xml", true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Name</th><th>E-mail</th><th>Contact</th></tr>";
+  var x = xmlDoc.getElementsByTagName("CD");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+</div>
+
+</center>
+
+    <h3>Google Map Location</h3>
+    <div id="map" class="col-5"></div>
+    <script>
+      function initMap() {
+      
+        var uluru = {lat:19.0454, lng:72.8889};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 18,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBL0YnmIfZqElm1KLIusbLLooqXT0-e0Ts&callback=initMap">
+    </script>
+</div>
+<br>
+<center>
+<img src="https://t4.ftcdn.net/jpg/01/08/89/47/240_F_108894716_XTAQTSuU1B1kmM7w9CqL0wEJI7TjAOXY.jpg" width="50%;">
+</center>
+
+<footer>
+  <p>Copyright 2016-2020 by VG corporation. All Rights Reserved.</p>
+</footer>
+
+<div style='text-align: right;position: fixed;z-index:9999999;bottom: 0; width: 100%;cursor: pointer;line-height: 0;'><a title="Hosted on free web hosting 000webhost.com. Host your own website for FREE." target="_blank" href="https://www.000webhost.com/?utm_source=000webhostapp&utm_campaign=000_logo&utm_medium=website_undernourished-acti&utm_content=footer_img"><img src="https://cloud.githubusercontent.com/assets/23024110/20663010/9968df22-b55e-11e6-941d-edbc894c2b78.png"  alt="www.000webhost.com"></a></div></body>
+</html>
